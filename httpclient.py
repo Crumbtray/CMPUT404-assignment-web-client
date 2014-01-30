@@ -143,10 +143,7 @@ class HTTPClient(object):
 
         # Prepare the arguments
         if(args != None):
-            for key, value in args.iteritems():
-                contentString = contentString + "&" + key + "=" + value
-            # Remove the first '&'
-            contentString = contentString[1:]
+            contentString = urllib.urlencode(args)
 
         contentLengthHeader = "Content-Length: " + str(len(contentString)) + "\r\n"
 
