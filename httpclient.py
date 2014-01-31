@@ -112,6 +112,7 @@ class HTTPClient(object):
         headers = self.get_headers(responseString)
         body = self.get_body(responseString)
 
+        socket.close()
         return HTTPResponse(code, body, headers)
 
     def POST(self, url, args=None):
@@ -159,6 +160,7 @@ class HTTPClient(object):
         code = self.get_code(responseString)
         headers = self.get_headers(responseString)
         body = self.get_body(responseString)
+        socket.close()
 
         return HTTPResponse(code, body, headers)
 
