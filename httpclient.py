@@ -97,7 +97,7 @@ class HTTPClient(object):
             getString = "GET " + o.path + " HTTP/1.1\r\n"
         hostHeader = "Host: " + o.hostname + "\r\n"
         acceptHeader = "Accept: */*\r\n"
-        connectionHeader = "Connection: keep-alive\r\n"
+        connectionHeader = "Connection: close\r\n"
 
         requestString = getString + hostHeader + acceptHeader + connectionHeader + "\r\n"
 
